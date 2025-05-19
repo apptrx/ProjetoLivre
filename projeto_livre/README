@@ -1,0 +1,34 @@
+# Biblioteca virtual
+
+Sistema de gerenciamento de uma biblioteca feita com orientação a objetos, para a disciplina de OO (UnB Gama, 2025/1).
+
+# Objetivo
+
+Permitir que usuários consultem livros, façam empréstimos e devoluções, enquanto funcionários podem cadastrar novos livros e usuários.
+
+# Casos de uso 
+
+1. Cadastrar Livro
+
+Ator: Funcionário
+Descrição: Cadastra novos livros no sistema. Eles tem título, autor e ano.
+
+2. Emprestar Livro
+
+Ator: Usuário
+Descrição: Solicita empréstimo de um livro disponível, funcionário utiliza o sistema para ver disponibilidade.
+
+3. Devolver Livro
+
+Ator: Usuário
+Descrição: Devolve livro e o sistema registra a devolução.
+
+4. Ver Lista de Livros
+
+Ator: Usuário / Funcionário
+Descrição: Consulta livros disponíveis no acervo.
+
+5. Ver Histórico de Empréstimos
+
+Ator: Usuário
+Descrição: Visualiza todos os livros que já pegou emprestado.
