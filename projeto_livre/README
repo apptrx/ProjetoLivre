@@ -16,19 +16,91 @@ Descrição: Cadastra novos livros no sistema. Eles tem título, autor e ano.
 2. Emprestar Livro
 
 Ator: Usuário
-Descrição: Solicita empréstimo de um livro disponível, funcionário utiliza o sistema para ver disponibilidade.
+Descrição: Solicita empréstimo de um livro disponível, funcionário vê se há disponibilidade.
 
 3. Devolver Livro
 
 Ator: Usuário
-Descrição: Devolve livro e o sistema registra a devolução.
+Descrição: Devolve livro e o Funcionário registra a devolução.
 
 4. Ver Lista de Livros
 
 Ator: Usuário / Funcionário
-Descrição: Consulta livros disponíveis no acervo.
+Descrição: Consulta livros disponíveis no acervo, falando qual é ebook e qual é mídia física, falando quantos tem.
 
 5. Ver Histórico de Empréstimos
 
 Ator: Usuário
 Descrição: Visualiza todos os livros que já pegou emprestado.
+
++-------------------+
+|      Livro        |
++-------------------+
+| titulo: str       |
+| autor: str        |
+| ano: int          |
+| disponivel: bool  |
++-------------------+
+| emprestar(usuario)|
+| devolver()        |
++-------------------+
+
++--------------------------------+
+|        LivroImpresso           |
++--------------------------------+               
+| numero_copias: int             |
++--------------------------------+
+| (herda emprestar/devolver)     |
++--------------------------------+
+
++--------------------------------+
+|            Ebook               |
++--------------------------------+
+| link_download: str             |
+| tem_drm: bool                  |
++--------------------------------+
+| (herda emprestar/devolver)     |
++--------------------------------+
+
++--------------------------------+
+|          Usuario               |
++--------------------------------+
+| nome: str                      |
+| id_usuario: str                |
+| lista_emprestimos: List        |
++--------------------------------+
+| realizar_emprestimo(emp)       |
+| realizar_devolucao(emp)        |
++--------------------------------+
+
++------------------------------------------------+
+|                 Funcionario                    |
++------------------------------------------------+
+| nivel_acesso: int                              |
+| id_funcionario: str                            |
+| livros_cadastrados: List                       |
++------------------------------------------------+
+| cadastrar_livro(livro)                         |
+| remover_livro(livro)                           |
++------------------------------------------------+
+
++------------------------------------------------+
+|                Emprestimo                     |
++------------------------------------------------+
+| usuario: Usuario                              |
+| livro: Livro                                  |
+| data_inicio: date                             |
+| data_fim: date \| None                        |
+| status: str                                   |
++------------------------------------------------+
+| devolver()                                    |
++------------------------------------------------+
+
+
+
+Livro <o------------ (1)LivroImpresso
+Livro <o------------ (1)Ebook
+Usuário <(1)------------ (1..*)Empréstimo
+Empréstimo <x>(1)------------ (1)Livro
+Livro <o>(0..*)------------ (1)Funcionário
+Funcionário <o------------ (1)Usuário
