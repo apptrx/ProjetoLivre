@@ -1,0 +1,28 @@
+{
+    "usuarios": [
+        {
+            
+            "nome": "João Silva",
+            "senha": "1234",
+            "id_usuario": "e63a77e7-3456-4890-b123-4567890abcdef"
+
+        } 
+    ],
+
+    "livros": [
+        {
+            "titulo": "Aprendendo Python",
+            "autor": "Maria Oliveira",
+            "ano_publicacao": 2020,
+            "disponivel": true
+        },
+        {
+            "titulo": "JavaScript Avançado",
+            "autor": "Carlos Pereira",
+            "ano_publicacao": 2019,
+            "disponivel": false
+        }
+    ],
+
+    "emprestimos": []
+}
