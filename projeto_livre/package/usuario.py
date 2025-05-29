@@ -2,12 +2,12 @@ import uuid
 from utilizar import carregar_dados, salvar_dados
 from main import dados, usuarios
 
-class usuario:
-    def __init__(self, nome, senha):
+class Usuario:
+    def __init__(self, nome, senha, id_usuario=None, tipo='comum'):
         self.nome = nome
         self.senha = senha
-        self.id_usuario = str(uuid.uuid4())
-
+        self.id_usuario = id_usuario if id_usuario else str(uuid.uuid4())
+        self.tipo = tipo
     def autenticar(self):      
         login = 0
         for i in usuarios: #vem do banco de dados
@@ -24,14 +24,17 @@ class usuario:
         return {
             "nome": self.nome,
             "senha": self.senha,
-            "id_usuario": self.id_usuario
+            "id_usuario": self.id_usuario,
+            "tipo": self.tipo
         }
     
     @staticmethod
     def trans_objeto(dados):
-        return usuario(
-            nome=dados["nome"],
-            senha=dados["senha"]
+        return Usuario(
+            dados["nome"],
+            dados["senha"],
+            dados["id_usuario"],
+            dados.get("tipo", "comum")
         )
                 
     def realizar_emprestimo(emprestimo):
