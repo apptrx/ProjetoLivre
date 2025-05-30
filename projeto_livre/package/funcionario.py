@@ -1,7 +1,8 @@
 from package.usuario import Usuario
 from package.livro import Livro
 from package.utilizar import carregar_dados, salvar_dados
-from main import dados, usuarios
+
+dados = carregar_dados('dados/biblioteca.json')
 
 class Funcionario(Usuario):
     def __init__(self, nome, senha, id_usuario=None):

@@ -1,5 +1,4 @@
-import uuid
-from utilizar import carregar_dados, salvar_dados
+
 class Livro:
     def __init__(self, titulo, autor, ano, disponivel=True):
         self.titulo = titulo
