@@ -7,9 +7,15 @@
         },
         {
             "nome": "Matheus",
-            "senha": "321",
-            "id_usuario": "comum",
+            "senha": "234",
+            "id_usuario": "b15d5227-4f0b-498b-b6af-858e356ed934",
             "tipo": "comum"
+        },
+        {
+            "nome": "appetrexo",
+            "senha": "456",
+            "id_usuario": "83f7792e-1695-48c6-ab28-b283d9a6816a",
+            "tipo": "funcionario"
         }
     ],
     "livros": [
@@ -24,6 +30,12 @@
             "autor": "Carlos Pereira",
             "ano_publicacao": 2019,
             "disponivel": false
+        },
+        {
+            "titulo": "Harry Potter",
+            "autor": "algu\u00e9m",
+            "ano": "2000",
+            "disponivel": true
         }
     ]
 }

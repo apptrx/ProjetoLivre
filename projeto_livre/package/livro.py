@@ -1,6 +1,8 @@
+import uuid
 
 class Livro:
-    def __init__(self, titulo, autor, ano, disponivel=True):
+    def __init__(self, titulo, autor, ano, disponivel=True, id_livro=None):
+        self.id_livro = id_livro if id_livro else str(uuid.uuid4())
         self.titulo = titulo
         self.autor = autor
         self.ano = ano
@@ -12,7 +14,6 @@ class Livro:
             print(f"Livro '{self.titulo}' emprestado com sucesso.")
         else:
             print(f"Livro '{self.titulo}' não está disponível para empréstimo.")
-    
 
     def devolver(self):
         if not self.disponivel:
@@ -26,7 +27,8 @@ class Livro:
             "titulo": self.titulo,
             "autor": self.autor,
             "ano": self.ano,
-            "disponivel": self.disponivel
+            "disponivel": self.disponivel,
+            "id_livro": self.id_livro
         }
 
     @staticmethod
@@ -35,5 +37,6 @@ class Livro:
             dados["titulo"],
             dados["autor"],
             dados["ano"],
-            dados.get("disponivel", True)
+            dados.get("disponivel", True),
+            dados.get("id_livro", None)
         )
