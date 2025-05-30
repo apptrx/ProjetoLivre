@@ -1,37 +1,39 @@
-# Biblioteca virtual
+# Biblioteca Virtual
 
-Sistema de gerenciamento de uma biblioteca feita com orientação a objetos, para a disciplina de OO (UnB Gama, 2025/1).
+Projeto desenvolvido para a disciplina de Orientação a Objetos (UnB Gama, 2025/1), com foco em aplicar os princípios de OO em Python através de um sistema de gerenciamento de biblioteca.
 
-# Objetivo
+## Objetivo
 
-Permitir que usuários consultem livros, façam empréstimos e devoluções, enquanto funcionários podem cadastrar novos livros e usuários.
+Permitir que usuários consultem livros, façam empréstimos e devoluções. Funcionários têm permissões adicionais, como o cadastro de novos livros.
 
-# Casos de uso 
+## Técnologias usadas
 
-1. Cadastrar Livro
+- Linguagem: Python
+- Paradigma: Orientação a Objetos
+- Persistência de dados: JSON
+- Interface: Terminal (CLI)
 
-Ator: Funcionário
-Descrição: Cadastra novos livros no sistema. Eles tem título, autor e ano.
+## Casos de Uso
 
-2. Emprestar Livro
+### 1. Cadastrar Livro
+**Ator**: Funcionário  
+**Descrição**: Adiciona um novo livro ao acervo, com título, autor e ano de publicação.
 
-Ator: Usuário
-Descrição: Solicita empréstimo de um livro disponível, funcionário vê se há disponibilidade.
+### 2. Emprestar Livro
+**Ator**: Usuário (comum ou funcionário)  
+**Descrição**: Solicita o empréstimo de um livro disponível. O sistema marca o livro como indisponível.
 
-3. Devolver Livro
+### 3. Devolver Livro
+**Ator**: Usuário  
+**Descrição**: O usuário seleciona um livro emprestado para devolver. O sistema registra a data de devolução e libera o livro novamente.
 
-Ator: Usuário
-Descrição: Devolve livro e o Funcionário registra a devolução.
+### 4. Ver Lista de Livros
+**Ator**: Usuário / Funcionário  
+**Descrição**: Lista todos os livros disponíveis no sistema.
 
-4. Ver Lista de Livros
-
-Ator: Usuário / Funcionário
-Descrição: Consulta livros disponíveis no acervo, falando qual é ebook e qual é mídia física, falando quantos tem.
-
-5. Ver Histórico de Empréstimos
-
-Ator: Usuário
-Descrição: Visualiza todos os livros que já pegou emprestado.
+### 5. Registro de Usuário
+**Ator**: Novo Usuário  
+**Descrição**: Cria uma conta no sistema, podendo ser do tipo "comum" ou "funcionário".
 
 +-------------------+
 |      Livro        |
@@ -40,67 +42,82 @@ Descrição: Visualiza todos os livros que já pegou emprestado.
 | autor: str        |
 | ano: int          |
 | disponivel: bool  |
+| id_livro: bool    |
 +-------------------+
-| emprestar(usuario)|
-| devolver()        |
+| emprestar()        |
+| devolver()         |
+| volta_objeto()     |
+| trans_objeto(dados)|
 +-------------------+
 
-+--------------------------------+
-|        LivroImpresso           |
-+--------------------------------+               
-| numero_copias: int             |
-+--------------------------------+
-| (herda emprestar/devolver)     |
-+--------------------------------+
-
-+--------------------------------+
-|            Ebook               |
-+--------------------------------+
-| link_download: str             |
-| tem_drm: bool                  |
-+--------------------------------+
-| (herda emprestar/devolver)     |
-+--------------------------------+
 
 +--------------------------------+
 |          Usuario               |
 +--------------------------------+
 | nome: str                      |
+| senha: str                     |
 | id_usuario: str                |
-| lista_emprestimos: List        |
+| tipo: str                      |
 +--------------------------------+
-| realizar_emprestimo(emp)       |
-| realizar_devolucao(emp)        |
+| autenticar(usuarios)           |
+| volta_objeto()                 |
+| trans_objeto(dados)            |
 +--------------------------------+
 
 +------------------------------------------------+
-|                 Funcionario                    |
+|      Funcionario(Usuario, Mixin)               |
 +------------------------------------------------+
-| nivel_acesso: int                              |
-| id_funcionario: str                            |
-| livros_cadastrados: List                       |
+| nome: int                                      |
+| senha: str                                     |
+| id_usuario: str                                |
+| tipo: str                                      |
 +------------------------------------------------+
 | cadastrar_livro(livro)                         |
-| remover_livro(livro)                           |
 +------------------------------------------------+
 
 +------------------------------------------------+
 |                Emprestimo                     |
 +------------------------------------------------+
-| usuario: Usuario                              |
-| livro: Livro                                  |
-| data_inicio: date                             |
-| data_fim: date \| None                        |
-| status: str                                   |
+| id_livro: str                                 |
+| id_usuario: str                               |
+| id_emprestimo: bool                           |
+| data_emprestimo: bool                         |
+| data_devolucao: bool                          |
 +------------------------------------------------+
 | devolver()                                    |
+| volta_objeto()                                |
+| trans_objeto()                                |
 +------------------------------------------------+
 
 
++---------------------------------------+
+|                Sistema                |
++---------------------------------------+
+|                                       |
+|                                       |
++---------------------------------------+
+| carregar_dados(caminho_relativo)      |
+| salvar_dados(caminho_relativo,dados)  |
++---------------------------------------+
 
-Livro <o------------ (1)LivroImpresso
-Livro <o------------ (1)Ebook
-Usuário <(1)------------ (1..*)Empréstimo
-Empréstimo <x>(1)------------ (1)Livro
-Livro <o>(0..*)------------ (1)Funcionário
-Funcionário <o------------ (1)Usuário
+
+Funcionário(1) -----------o> (1)Usuário 
+
+Funcionário(1) -----------o> (1)Mixin
+
+Emprestimo(1) <x>-------- (1)Livro 
+
+Emprestimo(0..*) <x>-------- (1)Usuário 
+
+Emprestimo(0..*) <x>-------- (1)Funcionário 
+
+Funcionário --------<o> Livro 
+
+Sistema(1) -.-.-.-.-.--> (0..*)Funcionário 
+
+Sistema(1) -.-.-.-.-.--> (0..*)Usuário
+
+Sistema(1) -.-.-.-.-.--> (0..*)Livro
+
+Sistema(1) -.-.-.-.-.--> (0..*)Empréstimo
+

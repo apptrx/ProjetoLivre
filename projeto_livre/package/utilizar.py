@@ -16,6 +16,6 @@ def carregar_dados(caminho_relativo):
 def salvar_dados(caminho_relativo, dados):
     caminho = os.path.join(BASE_DIR, caminho_relativo)
     with open(caminho, 'w') as f:
-        json.dump(dados, f, indent=4)
+        json.dump(dados, f, indent=4, ensure_ascii=False)
 
     

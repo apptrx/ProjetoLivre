@@ -4,6 +4,8 @@ from package.funcionario import Funcionario
 from package.livro import Livro
 from package.emprestimo import Emprestimo
 from datetime import datetime
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 
 def carregar_tudo():
     dados = carregar_dados('dados/biblioteca.json')

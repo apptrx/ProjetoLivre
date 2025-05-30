@@ -15,7 +15,7 @@
     ],
     "livros": [
         {
-            "titulo": "O Senhor dos An\u00c3\u00a9is",
+            "titulo": "O Senhor dos Anéis",
             "autor": "J.R.R. Tolkien",
             "ano": 1954,
             "id_livro": "1a2b3c4d-5e6f-7g8h-9i0j-k1l2m3n4o5p6",
@@ -39,16 +39,24 @@
             "titulo": "A Moreninha",
             "autor": "Joaquim Manuel de Macedo",
             "ano": 1844,
-            "disponivel": false,
+            "disponivel": true,
             "id_livro": "9a0b1c2d-3e4f-5g6h-7i8j-k9l0m1n2o3p4"
         },
         {
-            "titulo": "Harry Potter",
-            "autor": "Harry",
-            "ano": 2001,
+            "titulo": "O Guarani",
+            "autor": "José de Alencar",
+            "ano": 1857,
+            "disponivel": true,
+            "id_livro": "5255ad35-52de-44a2-acdd-a9925293eb79"
+        },
+        {
+            "titulo": "Memórias Póstumas de Brás Cubas",
+            "autor": "Machado de Assis",
+            "ano": 1881,
             "disponivel": true,
             "id_livro": "667653d7-c83c-4e6e-8dba-f2ca681d81c6"
         }
+        
     ],
     "emprestimos": [
         {
@@ -63,7 +71,14 @@
             "id_livro": "9a0b1c2d-3e4f-5g6h-7i8j-k9l0m1n2o3p4",
             "id_usuario": "83f7792e-1695-48c6-ab28-b283d9a6816a",
             "data_emprestimo": "2025-05-30 19:11:30",
-            "data_devolucao": null
+            "data_devolucao": "2025-05-30 20:29:24"
+        },
+        {
+            "id_emprestimo": "d94ebb35-dbb4-49e7-ae04-d844dc341b62",
+            "id_livro": "5255ad35-52de-44a2-acdd-a9925293eb79",
+            "id_usuario": "83f7792e-1695-48c6-ab28-b283d9a6816a",
+            "data_emprestimo": "2025-05-30 20:29:39",
+            "data_devolucao": "2025-05-30 20:29:53"
         }
     ]
 }
