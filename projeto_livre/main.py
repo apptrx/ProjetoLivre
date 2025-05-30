@@ -37,7 +37,7 @@ def menu_usuario(usuario, livros, dados):
             titulo = input("Título do livro: ")
             livro = next((l for l in livros if l.titulo.lower() == titulo.lower() and l.disponivel), None)
             if livro:
-                emprestimo = Emprestimo(usuario.id_usuario, livro.id_livro)
+                emprestimo = Emprestimo(livro.id_livro, usuario.id_usuario)
                 livro.disponivel = False
                 salvar_emprestimo(emprestimo, livro, dados)
                 print(f"Livro '{livro.titulo}' emprestado com sucesso.")
@@ -109,7 +109,7 @@ def menu_funcionario(funcionario, livros, dados):
             titulo = input("Título do livro: ")
             livro = next((l for l in livros if l.titulo.lower() == titulo.lower() and l.disponivel), None)
             if livro:
-                emprestimo = Emprestimo(funcionario.id_usuario, livro.id_livro)
+                emprestimo = Emprestimo(livro.id_livro, funcionario.id_usuario)
                 livro.disponivel = False
                 salvar_emprestimo(emprestimo, livro, dados)
                 print(f"Livro '{livro.titulo}' emprestado com sucesso.")
