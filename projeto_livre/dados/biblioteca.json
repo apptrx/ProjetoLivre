@@ -1,41 +1,62 @@
 {
     "usuarios": [
         {
-            "nome": "Jo\u00c3\u00a3o Silva",
-            "senha": "1234",
-            "id_usuario": "e63a77e7-3456-4890-b123-4567890abcdef"
-        },
-        {
-            "nome": "Matheus",
-            "senha": "234",
-            "id_usuario": "b15d5227-4f0b-498b-b6af-858e356ed934",
-            "tipo": "comum"
-        },
-        {
             "nome": "appetrexo",
             "senha": "456",
             "id_usuario": "83f7792e-1695-48c6-ab28-b283d9a6816a",
             "tipo": "funcionario"
+        },
+        {
+            "nome": "Lucas",
+            "senha": "789",
+            "id_usuario": "078bc572-b892-4d43-b08a-2f1bdd38872e",
+            "tipo": "comum"
         }
     ],
     "livros": [
         {
-            "titulo": "Aprendendo Python",
-            "autor": "Maria Oliveira",
-            "ano_publicacao": 2020,
+            "titulo": "O Senhor dos An\u00c3\u00a9is",
+            "autor": "J.R.R. Tolkien",
+            "ano": 1954,
+            "id_livro": "1a2b3c4d-5e6f-7g8h-9i0j-k1l2m3n4o5p6",
             "disponivel": true
         },
         {
-            "titulo": "JavaScript Avan\u00c3\u00a7ado",
-            "autor": "Carlos Pereira",
-            "ano_publicacao": 2019,
-            "disponivel": false
+            "titulo": "1984",
+            "autor": "George Orwell",
+            "ano": 1949,
+            "id_livro": "7a8b9c0d-1e2f-3g4h-5i6j-k7l8m9n0o1p2",
+            "disponivel": true
+        },
+        {
+            "titulo": "Dom Casmurro",
+            "autor": "Machado de Assis",
+            "ano": 1899,
+            "id_livro": "3a4b5c6d-7e8f-9g0h-1i2j-k3l4m5n6o7p8",
+            "disponivel": true
+        },
+        {
+            "titulo": "A Moreninha",
+            "autor": "Joaquim Manuel de Macedo",
+            "ano": 1844,
+            "id_livro": "9a0b1c2d-3e4f-5g6h-7i8j-k9l0m1n2o3p4",
+            "disponivel": true
         },
         {
             "titulo": "Harry Potter",
-            "autor": "algu\u00e9m",
-            "ano": "2000",
-            "disponivel": true
+            "autor": "Harry",
+            "ano": 2001,
+            "disponivel": false,
+            "id_livro": "667653d7-c83c-4e6e-8dba-f2ca681d81c6"
+        }
+    ],
+    "emprestimos": [
+        {
+            "id_emprestimo": "568a53ed-f4fc-4261-a1b3-8c5483b52d6f",
+            "id_livro": "83f7792e-1695-48c6-ab28-b283d9a6816a",
+            "id_usuario": "667653d7-c83c-4e6e-8dba-f2ca681d81c6",
+            "data_emprestimo": "2025-05-30 19:07:12",
+            "data_devolucao": null
         }
     ]
 }
