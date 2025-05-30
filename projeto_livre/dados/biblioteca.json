@@ -59,7 +59,7 @@
             "titulo": "Memórias Póstumas de Brás Cubas",
             "autor": "Machado de Assis",
             "ano": 1881,
-            "disponivel": true,
+            "disponivel": false,
             "id_livro": "667653d7-c83c-4e6e-8dba-f2ca681d81c6"
         }
     ],
@@ -84,6 +84,13 @@
             "id_usuario": "83f7792e-1695-48c6-ab28-b283d9a6816a",
             "data_emprestimo": "2025-05-30 20:29:39",
             "data_devolucao": "2025-05-30 20:29:53"
+        },
+        {
+            "id_emprestimo": "91d1f922-dbac-4b7a-8577-d148affcbdea",
+            "id_livro": "667653d7-c83c-4e6e-8dba-f2ca681d81c6",
+            "id_usuario": "078bc572-b892-4d43-b08a-2f1bdd38872e",
+            "data_emprestimo": "2025-05-30 20:44:03",
+            "data_devolucao": null
         }
     ]
 }
