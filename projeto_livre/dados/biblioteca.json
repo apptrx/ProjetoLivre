@@ -11,6 +11,12 @@
             "senha": "789",
             "id_usuario": "078bc572-b892-4d43-b08a-2f1bdd38872e",
             "tipo": "comum"
+        },
+        {
+            "nome": "Pedro",
+            "senha": "123",
+            "id_usuario": "2e12cdcb-cf61-4deb-80eb-edc70515644e",
+            "tipo": "comum"
         }
     ],
     "livros": [
@@ -56,7 +62,6 @@
             "disponivel": true,
             "id_livro": "667653d7-c83c-4e6e-8dba-f2ca681d81c6"
         }
-        
     ],
     "emprestimos": [
         {
