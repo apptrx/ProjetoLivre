@@ -1,5 +1,5 @@
 import uuid
-from utilizar import carregar_dados, salvar_dados
+from package.utilizar import carregar_dados, salvar_dados
 from main import dados, usuarios
 
 class Usuario:
