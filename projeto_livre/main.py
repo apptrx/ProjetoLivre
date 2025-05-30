@@ -1,5 +1,5 @@
 from package.usuario import Usuario
-from dados import biblioteca
+import dados 
 from package.utilizar import carregar_dados, salvar_dados 
 from package.funcionario import Funcionario
 
