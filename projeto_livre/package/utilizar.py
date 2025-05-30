@@ -1,7 +1,8 @@
 import json
 import os
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # Funções para carregar e salvar dados em JSON
 
 def carregar_dados(caminho_relativo):

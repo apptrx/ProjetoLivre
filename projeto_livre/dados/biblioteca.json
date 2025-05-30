@@ -1,14 +1,17 @@
 {
     "usuarios": [
         {
-            
-            "nome": "João Silva",
+            "nome": "Jo\u00c3\u00a3o Silva",
             "senha": "1234",
             "id_usuario": "e63a77e7-3456-4890-b123-4567890abcdef"
-
-        } 
+        },
+        {
+            "nome": "Matheus",
+            "senha": "321",
+            "id_usuario": "comum",
+            "tipo": "comum"
+        }
     ],
-
     "livros": [
         {
             "titulo": "Aprendendo Python",
@@ -17,11 +20,10 @@
             "disponivel": true
         },
         {
-            "titulo": "JavaScript Avançado",
+            "titulo": "JavaScript Avan\u00c3\u00a7ado",
             "autor": "Carlos Pereira",
             "ano_publicacao": 2019,
             "disponivel": false
         }
     ]
-
 }
