@@ -9,7 +9,7 @@ class Funcionario(Usuario):
 
     def cadastrar_livro(self, titulo, autor, ano):
         novo_livro = Livro(titulo, autor, ano)
-        dados['livros'].append(novo_livro.volta_objeto())
+        dados.setdefault("livros", []).append(novo_livro.volta_objeto())
         salvar_dados('dados/biblioteca.json', dados)
         print(f"Livro '{titulo}' cadastrado com sucesso!")
         

@@ -1,6 +1,5 @@
 import uuid
-from package.utilizar import carregar_dados, salvar_dados
-from main import dados, usuarios
+
 
 class Usuario:
     def __init__(self, nome, senha, id_usuario=None, tipo='comum'):
@@ -8,17 +7,15 @@ class Usuario:
         self.senha = senha
         self.id_usuario = id_usuario if id_usuario else str(uuid.uuid4())
         self.tipo = tipo
-    def autenticar(self):      
-        login = 0
+        
+    def autenticar(self, usuarios):      
         for i in usuarios: #vem do banco de dados
             # Verifica se o nome e a senha estão corretos
             if i.nome == self.nome and i.senha == self.senha:
                 print(f"Login bem-sucedido para o usuário {self.nome}")
-                login = 1
-                return True
-        if login == 0:
-            print("Nome de usuário ou senha incorretos.")
-            return False
+                return i
+        print("Nome de usuário ou senha incorretos.")
+        return None
         
     def volta_objeto(self):
         return {
