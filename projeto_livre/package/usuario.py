@@ -9,8 +9,7 @@ class Usuario:
         self.tipo = tipo
         
     def autenticar(self, usuarios):      
-        for i in usuarios: #vem do banco de dados
-            # Verifica se o nome e a senha estão corretos
+        for i in usuarios: 
             if i.nome == self.nome and i.senha == self.senha:
                 print(f"Login bem-sucedido para o usuário {self.nome}")
                 return i
@@ -32,9 +31,5 @@ class Usuario:
             dados["senha"],
             dados["id_usuario"],
             dados.get("tipo", "comum")
-        )
-                
-    def realizar_emprestimo(emprestimo):
-        pass
-    def realizar_devolucao(livro):
-        pass
+        )               
+  
